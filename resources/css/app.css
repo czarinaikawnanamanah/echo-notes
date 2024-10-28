@@ -1,0 +1,276 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    background: linear-gradient(#fdaafb, #d58fff, #8769eb);
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: center; /* Center the container vertically */
+    height: 100vh; /* Use full viewport height */
+    overflow-y: auto; /* Allow vertical scrolling */
+    font-family: "Tahoma", sans-serif;
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    gap: 20px;
+    max-width: 1000px; /* Set maximum width */
+    width: 100%;
+    justify-content: center; /* Center the child boxes */
+    align-items: stretch; /* Ensure containers stretch to the same height */
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.note-header {
+    background-color: #182559;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 60px; /* Adjust as needed */
+    width: 100%; /* Set width to 100% to fill the container */
+    padding: 0 20px; /* Remove top/bottom padding for a flush top */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 1.8em; /* Adjusted font size for better visibility */
+    position: absolute; /* Position it absolutely for full control */
+    top: 0; /* Align to the top of the box */
+    left: 0; /* Align to the left of the box */
+}
+
+.note-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Ensure it stacks its children */
+    gap: 10px; /* Space between title and text */
+}
+
+.note-title {
+    width: 100%;
+    padding: 10px;
+    font-size: 25px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 50px; /* Increased margin to lower the title further */
+}
+
+/* Note List Styles */
+.note-list {
+    flex: 1;
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px 15px; /* Adjusted padding for more space inside */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    height: 550px; /* Set to the same height as note-input */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Hide the overflow to show the scrollbar inside */
+    margin-top: 20px; /* Lower the note list */
+}
+
+.note-list-content {
+    flex: 1; /* Allow this to grow and take available space */
+    overflow-y: auto; /* Scrollbar for the note list */
+    padding: 10px; /* Padding for note items */
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f5f5f5;
+    margin-bottom: 20px;
+    color: #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+    font-size: 16px; /* Ensure readability */
+}
+
+/* Custom Scrollbar Styles for Note Input */
+.note-text::-webkit-scrollbar {
+    width: 12px; /* Width of the vertical scrollbar */
+    height: 12px; /* Height of the horizontal scrollbar */
+}
+
+.note-text::-webkit-scrollbar-track {
+    background: #f5f5f5; /* Light background for the scrollbar track */
+    border-radius: 10px; /* Rounded scrollbar track */
+}
+
+.note-text::-webkit-scrollbar-thumb {
+    background: #182559; /* Dark thumb color for visibility */
+    border-radius: 10px; /* Rounded scrollbar thumb */
+    border: 3px solid #f5f5f5; /* Padding around the thumb */
+}
+
+.note-text::-webkit-scrollbar-thumb:hover {
+    background: #4b4b4b; /* Darker color on hover for clarity */
+}
+
+/* Note Input Styles */
+.note-input {
+    position: relative; /* Ensure the parent is positioned relatively */
+    flex: 2;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    height: 550px; /* Keep the original height */
+    display: flex;
+    flex-direction: column;
+    padding: 30px; /* Increase padding for inner spacing */
+    overflow-y: auto; /* Add scrollbar if content exceeds */
+    margin-top: 20px; /* Lower the note input */
+}
+
+.note-text {
+    width: calc(100% - 12px); /* Account for the scrollbar width */
+    flex: 1; /* Allow it to take available space */
+    padding: 10px;
+    padding-bottom: 60px; /* Ensure space for the button */
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+    overflow-y: auto; /* Ensure overflow is scrollable */
+}
+
+.add-button {
+    position: absolute; /* Use absolute positioning */
+    bottom: 20px; /* Position it lower */
+    right: 20px; /* Position it to the right */
+    background-color: rgba(211, 211, 211, 0.7); /* Light gray with 70% opacity */
+    border: none; /* Remove the border */
+    width: 50px; /* Equal width and height make it a perfect circle */
+    height: 50px;
+    border-radius: 50%; /* Ensures it's circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffffff; /* White color for the "+" symbol */
+    cursor: pointer;
+    box-shadow: none; /* Remove shadow for a cleaner look */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.add-button:hover {
+    transform: scale(1.1); /* Slightly enlarges button */
+    background-color: #182559; /* Blue background on hover */
+}
+
+.note-item {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevents overflow of child elements */
+    width: 100%;
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.note-item strong, /* For the title */
+.note-item p { /* For the note text */
+    margin: 0; /* Remove default margin for both elements */
+    overflow: hidden; /* Hide overflow */
+    white-space: nowrap; /* Prevent wrapping */
+    text-overflow: ellipsis; /* Add ellipsis */
+}
+
+.note-item strong {
+    display: block; /* Ensures the title takes a full line */
+    font-weight: bold; /* Optional: makes the title bold */
+}
+
+
+.note-item {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.note-item:hover {
+    background-color: #e0e0e0; /* Change background color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+    }
+
+    .note-input,
+    .note-list {
+        width: 100%;
+    }
+
+    .note-input {
+        margin-bottom: 20px;
+    }
+
+    .note-title {
+        font-size: 1.5em; /* Adjust font size for tablets */
+    }
+
+    .note-text {
+        font-size: 1em; /* Adjust font size for tablets */
+    }
+
+    .add-button {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5em; /* Adjust button size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .note-title {
+        font-size: 1.2em;
+    }
+
+    .note-text {
+        font-size: 0.9em;
+    }
+
+    .add-button {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2em;
+    }
+
+    .note-item {
+        padding: 8px;
+    }
+}
+
+/* Custom Scrollbar Styles for Note List */
+.note-list-content::-webkit-scrollbar {
+    width: 12px; /* Width of the vertical scrollbar */
+    height: 12px; /* Height of the horizontal scrollbar */
+}
+
+.note-list-content::-webkit-scrollbar-track {
+    background: #f5f5f5; /* Light background for the scrollbar track */
+    border-radius: 10px; /* Rounded scrollbar track */
+}
+
+.note-list-content::-webkit-scrollbar-thumb {
+    background: #182559; /* Dark thumb color for visibility */
+    border-radius: 10px; /* Rounded scrollbar thumb */
+}
+
+.note-list-content::-webkit-scrollbar-thumb:hover {
+    background: #4b4b4b; /* Darker color on hover for clarity */
+}

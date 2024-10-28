@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(#fdaafb, #d58fff, #8769eb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-y: auto;
+    font-family: "Tahoma", sans-serif;
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+    justify-content: center;
+    align-items: stretch;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.note-header {
+    background-color: #182559;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 60px;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 1.8em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.note-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.note-title {
+    width: 100%;
+    padding: 10px;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.note-title:focus {
+    outline: none;
+}
+
+.note-input {
+    position: relative;
+    flex: 2;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.note-content {
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+    overflow-y: auto;
+}
+
+.note-content::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.note-content::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.note-content::-webkit-scrollbar-thumb {
+    background: #182559;
+    border-radius: 10px;
+    border: 3px solid #f5f5f5;
+}
+
+.note-content::-webkit-scrollbar-thumb:hover {
+    background: #4b4b4b;
+}
+
+#note-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.add-button {
+    align-self: flex-end;
+    padding: 15px 40px;
+    background-color: #cad0d4;
+    color: #8e939a;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    font-family: Tahoma, sans-serif;
+    max-width: fit-content;
+}
+
+.add-button:hover {
+    background-color: #143a81;
+    color: white;
+}
+
+.note-item {
+    font-size: 14px;
+    padding: 5px 6px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: auto;
+    height: auto !important;
+    max-height: 70px;
+    min-height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.note-item strong {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #000000;
+    margin-bottom: 2px;
+    width: 100%;
+}
+
+.note-item p {
+    font-size: 1em;
+    margin: 0;
+    color: #000000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.note-actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    gap: 6px;
+}
+
+.edit-btn,
+.delete-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.delete-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.update-note-btn {
+    background-color: #182559;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.update-note-btn:hover {
+    background-color: #0f1b40;
+}
+
+@media (max-width: 1024px) {
+    .note-content {
+        width: 100%;
+        height: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .note-content {
+        width: 100%;
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .note-content {
+        width: 100%;
+        height: 180px;
+    }
+}
