@@ -26,7 +26,7 @@
                     oninput="searchNotes()"
                 >
                 <button id="add-note-btn" class="add-button" onclick="window.location.href='{{ route('notes.create') }}'">
-                    <i class="fas fa-plus"></i> <!-- Add button redirects to the create page -->
+                    <i class="fas fa-plus"></i> 
                 </button>
             </div>
 
