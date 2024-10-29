@@ -1,11 +1,9 @@
-// Selectors
 const noteTitleInput = document.querySelector('.note-title');
 const noteTextInput = document.querySelector('.note-text');
 const addButton = document.querySelector('.add-button');
 const noteList = document.getElementById('noteList');
 const searchInput = document.querySelector('.search-bar');
 
-// Function to create a note item
 function createNoteItem(title, content) {
     const noteItem = document.createElement('div');
     noteItem.classList.add('note-item');
@@ -14,7 +12,6 @@ function createNoteItem(title, content) {
         <p>${content}</p>
     `;
 
-    // Add click event to delete the note
     noteItem.addEventListener('click', () => {
         noteItem.remove();
     });
@@ -22,7 +19,6 @@ function createNoteItem(title, content) {
     return noteItem;
 }
 
-// Function to add a note
 function addNote() {
     const title = noteTitleInput.value.trim();
     const content = noteTextInput.value.trim();
@@ -31,7 +27,6 @@ function addNote() {
         const noteItem = createNoteItem(title, content);
         noteList.appendChild(noteItem);
 
-        // Clear the inputs after adding a note
         noteTitleInput.value = '';
         noteTextInput.value = '';
     } else {
@@ -39,7 +34,6 @@ function addNote() {
     }
 }
 
-// Function to filter notes
 function filterNotes() {
     const searchTerm = searchInput.value.toLowerCase();
     const notes = noteList.children;
@@ -50,6 +44,5 @@ function filterNotes() {
     });
 }
 
-// Event Listeners
 addButton.addEventListener('click', addNote);
 searchInput.addEventListener('input', filterNotes);
