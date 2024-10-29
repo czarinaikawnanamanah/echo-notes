@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Note - Echo Notes</title>
-    <link rel="stylesheet" href="/css/createnote.css"> <!-- Assuming you use the same CSS for consistency -->
+    <link rel="stylesheet" href="/css/createnote.css"> 
     <link rel="icon" href="/images/android-chrome-512x512.png" type="image/png">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
@@ -20,6 +20,6 @@
         </div>
     </div>
 
-    <script src="/js/createnote.js"></script> <!-- If additional JavaScript is needed -->
+    <script src="/js/createnote.js"></script> 
 </body>
 </html>
